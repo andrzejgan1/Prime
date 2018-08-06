@@ -5,13 +5,13 @@
 
 int main()
 {
-    std::vector<int> numbers(1000);
+    std::vector<int> numbers(10000);
     std::vector<int> prime;
     std::iota(numbers.begin(), numbers.end(), 2);
     std::transform(numbers.begin(), numbers.end(),
                     std::back_inserter(prime),
                     [](int a){
-                    std::vector<int> v1(a-2);
+                    std::vector<int> v1((a-2)/2);
                     std::vector<int> v2;
                     std::iota(v1.begin(), v1.end(), 2);
                     std::transform((begin(v1))++, v1.end(),
