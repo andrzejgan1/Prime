@@ -5,7 +5,9 @@
 
 int main()
 {
-    std::vector<int> prime(1000);
+    int n;
+    std::cin >> n;
+    std::vector<int> prime(n-1);
     std::vector<int> p;
     std::iota(prime.begin(), prime.end(), 2);
     auto iterEnd = prime.end();
