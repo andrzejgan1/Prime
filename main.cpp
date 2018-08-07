@@ -55,11 +55,15 @@ int main()
                 });
 //show result
     std::cout << "Random N numbers from M:" << std::endl;
-    for (auto iter : numbers)
-    {
-        std::cout << iter << std::endl;
-    }
-    std::cout << "Map:" << std::endl;
+    std::copy(numbers.begin(), numbers.end(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout << "\nMap:" << std::endl;
+    std::transform(map.begin(), map.end(),
+                   std::ostream_iterator<int>(std::cout, " "),
+                   [](auto a)
+                   {
+                        return a.first;
+                   });
+
     for (auto iter : map)
     {
         std::cout << iter.first << "  - > ";
