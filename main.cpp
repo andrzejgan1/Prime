@@ -5,10 +5,10 @@
 
 int main()
 {
-    std::vector<int> numbers(10000);
+    std::vector<int> numbers(100);
     std::vector<int> prime;
     std::iota(numbers.begin(), numbers.end(), 2);
-    std::transform(numbers.begin(), numbers.end(),
+    std::copy_if(numbers.begin(), numbers.end(),
                     std::back_inserter(prime),
                     [](int a){
                     std::vector<int> v1((a-2)/2);
